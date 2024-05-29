@@ -1,0 +1,61 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "vulp"
+readme = "README.md"
+authors = [
+    {name = "Stéphane Caron", email = "stephane.caron@normalesup.org"},
+]
+maintainers = [
+    {name = "Stéphane Caron", email = "stephane.caron@normalesup.org"},
+]
+dynamic = ['version', 'description']
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Robot Framework :: Library",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "msgpack >=1.0.2",
+]
+keywords = ["motion control", "real time", "robotics"]
+
+[project.urls]
+Documentation = "https://upkie.github.io/vulp/"
+Source = "https://github.com/upkie/vulp"
+Tracker = "https://github.com/upkie/vulp/issues"
+Changelog = "https://github.com/upkie/vulp/blob/main/CHANGELOG.md"
+
+[tool.flit.sdist]
+exclude = [
+    "**/*.cpp",
+    "**/*.h",
+    "**/*.mtl",
+    "**/*.obj",
+    "**/*.png",
+    "**/*.urdf",
+    "**/BUILD",
+    "**/LICENSE.md",
+    "**/tests/*_test.py",
+    ".bazel*",
+    ".clang-format",
+    ".git*",
+    "CPPLINT.cfg",
+    "WORKSPACE",
+    "docs/",
+    "tools/",
+]
+include = [
+    "vulp/**/*.py",
+]
